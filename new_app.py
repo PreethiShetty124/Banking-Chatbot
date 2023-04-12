@@ -4,13 +4,11 @@ from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.svm import SVC
 import pandas as pd
 import numpy as np
-#import fsspec 
+import fsspec 
 
 # Load the preprocessed data
-#df = pd.read_csv('final_data.csv')
-df = pd.read_csv('final_data.csv',encoding='ISO-8859-1')
-
-# BankMerge = pd.concat([BankFAQs,BankData2])
+df = pd.read_csv('final_data.csv')
+#df = pd.read_csv('final_data.csv',encoding='ISO-8859-1')
 
 # Define the TD-IDF vectorizer and fit it to the data
 tdidf = TfidfVectorizer()
@@ -70,5 +68,5 @@ def app():
             st.success(answer)
 
 # Run the streamlit app
-if __name__ == '_main_':
+if __name__ == '__main__':
     app()
